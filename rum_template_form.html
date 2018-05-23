@@ -1,0 +1,104 @@
+<! doctype html>
+<title>Rum form</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=width-device">
+
+<link rel="stylesheet" href="stylesheet.css">
+<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAEZkAUzWu7JsOvVCXP3WkBSnX5acMbtKg",
+    authDomain: "rumeo-7o7cc.firebaseapp.com",
+    databaseURL: "https://rumeo-7o7cc.firebaseio.com",
+    projectId: "rumeo-7o7cc",
+    storageBucket: "",
+    messagingSenderId: "114225470187"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<form>
+  <fieldset>
+    <legend>Expert Information</legend>
+  <label for="firstName">Expert First Name</label>
+  <input required autofocus autocomplete="name" type="text" placeholder="your first name" id="firstName" name="firstName">
+
+  <label for="lastName">Expert Last Name</label>
+  <input required type="text" autocomplete="family-name" placeholder="your last name" id="lastName" name="lastName">
+
+  <label for="urlExpert">Website/URL</label>
+  <input optional type="url" placeholder="URL linking to your website/profile/presentation" id="urlExpert" name="urlExpert">
+
+  <label for="presentationExpert">Short presentation (max 200 characters)</label>
+  <input required type="text" maxlength="200" placeholder="Your presentation" id="presentationExpert" name="presentationExpert">
+  </fieldset>
+
+  <fieldset>
+    <legend>Main Rum Info</legend>
+  <label for="rumType">rum Type</label>
+  <select id="rumType" name="rumType">
+          <option value="rum">rum</option>
+          <option value="ron">ron</option>
+          <option value="rhum">rhum</option>
+  </select>
+
+  <label for="rumName">Rum/Ron/Rhum Name</label>
+  <input required type="text" id="rumName" name="rumName">
+
+  <label for="rumBrand">Brand</label>
+  <input required type="text" id="rumBrand" name="rumBrand">
+
+  <label for="rumDistillery">Distillery</label>
+  <input required type="text" id="rumDistillery" name="rumDistillery">
+
+  <label for="rumCountry">Rum Country</label>
+  <input required type="text" id="rumCountry" name="rumCountry">
+
+  <label for="rumYear">Year</label>
+  <input required type="number" min="1900" max="2020" pattern="[0-9]*" id="rumYear" name="rumYear">
+  //need to accept values like 9.5 in the pattern
+  </fieldset>
+
+  <fieldset>
+    <legend>Tasting</legend>
+
+    //photo missing!
+
+
+  <label for="rumView">The View</label>
+  <textarea required id="rumView" name="rumView"></textarea>
+
+  <label for="rumSniff">The Sniff</label>
+  <textarea required id="rumSniff" name="rumSniff"></textarea>
+
+  <label for="rumTasting">The Tasting</label>
+  <textarea required id="rumTasting" name="rumTasting"></textarea>
+
+  <label for="rumInitialImpressions">Initial Impressions</label>
+  <textarea required id="rumInitialImpressions" name="rumInitialImpressions"></textarea>
+
+  <label for="rumBody">The Body</label>
+  <textarea required id="rumBody" name="rumBody"></textarea>
+
+  <label for="rumFade">The Fade</label>
+  <textarea required id="rumFade" name="rumFade"></textarea>
+
+  <label for="rumFurtherTasting">Further Tasting</label>
+  <textarea required id="rumFurtherTasting" name="rumFurtherTasting"></textarea>
+  </fieldset>
+
+  <fieldset>
+    <legend>Summary</legend>
+  <label for="rumExpertAnecdote">Anecdote</label>
+  <textarea required id="rumExpertAnecdote" name="rumExpertAnecdote"></textarea>
+
+  <label for="rumFinalNote">Final Note (from 0 to 10)</label>
+  <input required type="number" min="0" max="10" pattern="[0-9]*" id="rumFinalNote" name="rumFinalNote">
+  </fieldset>
+
+  <input type="submit" id="rumFormSubmit" value="Submit">
+  //need to send the summary of the form to the expert via mail
+
+</form>
+</html>
