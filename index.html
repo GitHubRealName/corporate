@@ -28,58 +28,78 @@
     <h1><section class="title_logo">rumeo</section></h1>
 </header>
 
-<main>
-  <section id="loggedIn">
+<main class="mainClass">
+  <div class="mainContainer">
+    <div class="wrapContainer">
+  <!-- discuss about the relevance of the section id="loggedIn"-->
+  <section class="sectionClass" id="loggedIn">
       <p>Welcome <span id="userName">User</span>.
       <a href="#" id="lnkLogOut">Log out</a></p>
   </section>
 
-  <section id="loggedOut">
-      <section id="login">
-        <div class="popupMain">
-          <h2>Log In into Your Account</h2>
+<div class="popupMain">
+  <section class="sectionClass" id="loggedOut">
+      <section class="sectionClass" id="login">
+          <h2><span class="formTitle">Login</span></h2>
           <form onsubmit="return false">
             <p>
-              <label for="emailLogin">Email</label>
-              <input id="emailLogin" type="email" required>
+              <div class="labelClass" for="emailLogin">
+              <input class="inputClass"id="emailLogin" type="email" placeholder="Email" required data-validate="Email is required">
+              <span class="spanloginClass"></span>
+              </div>
             </p>
             <p>
-              <label for="passLogin">Password</label>
-              <input id="passLogin" type="password" required>
+              <div class="labelClass" for="passLogin">
+              <input class="inputClass"id="passLogin" type="password" placeholder="Password" required data-validate="Password is required">
+              <span class="spanloginClass"></span>
+              </div>
             </p>
-              <button id="btnLogIn">Log In</button>
+            <div class="btnFormClassContainer">
+              <button class="btnFormClass" id="btnLogIn">Log In</button>
+            </div>
           </form>
           <p>
-          <div>forgot password? <a href="#" id="lnkSignUp">Sign Up</a></div>
+          <div class="switchConnection">new user? <a href="#" id="lnkSignUp">Sign Up</a></div>
         </p>
-      </div>
       </section>
-      <section id="signup">
-        <div class="popupMain">
-          <h2>Sign Up for a New Account</h2>
+</div>
+<div class="popupMain">
+      <section class="sectionClass" id="signup">
+          <h2><span class="formTitle">Sign Up<span></h2>
           <form onsubmit="return false">
             <p>
-              <label for="label">Name</label>
-              <input id="name" placeholder="Enter your full name" required>
+              <div class="labelClass" for="label">
+              <input class="inputClass" id="name" placeholder="Enter your full name" required data-validate ="Username is required">
+              <span class="spanloginClass"></span>
+              </div>
             </p>
             <p>
-              <label for="email">Email</label>
-              <input id="email" type="Email" required>
+              <div class="labelClass" for="email">
+              <input class="inputClass"id="email" placeholder="Email" type="Email" required data-validate="Email is required">
+              <span class="spanloginClass"></span>
+              </div>
             </p>
             <p>
-              <label for="pass">Password</label>
-              <input id="pass" type="password" required>
+              <div class="labelClass" for="pass">
+              <input class="inputClass" id="pass" placeholder="Password" type="password" required data-validate="Password is required">
+              <span class="spanloginClass"></span>
+              </div>
             </p>
             <p>
-              <label for="pass2">Confirm Pass</label>
-              <input id="pass2" type="password" required>
+              <div class="labelClass" for="pass2">
+              <input class="inputClass"id="pass2" placeholder="Retype Password" type="password" required>
+              <span class="spanloginClass"></span>
+            </div>
             </p>
             <p>
-              <button id="btnSignUp">Sign Up</button>
+              <button class="btnSubmitClass" id="btnSignUp">Sign Up</button>
             </p>
           </form>
-          <div>You have an account? <a href="#" id="lnkLogIn">Login</a></div>
+          <div class="switchConnection">You have an account? <a href="#" id="lnkLogIn">Login</a></div>
         </div>
       </section>
   </section>
+  </div>
+</div>
+</div>
 </main>

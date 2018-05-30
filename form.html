@@ -22,129 +22,148 @@
 <header>
     <h1><section class="title_logo">rumeo</section></h1>
 </header>
+<div class="mainFormContainer">
+  <section class="welcomeMessage" id="mainMenu">
+      <p>Welcome <span id="userName"></span>! Please fill out the form and press submit to send us your great rum review :)</p>
+      <p class="lnkLogOutMainMenu"><a href="#" id="lnkLogOut">Log out</a></p>
+  </section>
 
-<section id="mainMenu">
-    <p>Welcome <span id="userName"></span>! Please fill out the form and press submit to send us your great rum review :)</p>
-    <p><a href="#" id="lnkLogOut">Log out</a></p>
-</section>
+  <section id="formToSubmit">
+    <form id="tastingForm">
+      //change optional to required except for URL
+      <fieldset>
+        <legend>Expert Information</legend>
+      <p>
+      <div class="labelClass" for="firstName"></label>
+      <input class="inputClass" optional autofocus autocomplete="name" type="text" placeholder="Firstname" id="firstName" name="firstName">
+      </div>
+    </p>
+      <p>
+      <div class="labelClass" for="lastName"></label>
+      <input class="inputClass" optional type="text" autocomplete="family-name" placeholder="Lastname" id="lastName" name="lastName">
+      </div>
+    </p>
+      <p>
+      <div class="labelClass" for="urlExpert"></label>
+      <input class="inputClass" optional type="url" placeholder="URL linking to your website/profile/presentation" id="urlExpert" name="urlExpert">
+      </div>
+    </p>
+      <p>
+      <div class="labelClass" for="presentationExpert"></label>
+      <input class="inputClass" optional type="text" maxlength="200" placeholder="Your presentation (max 200 characters)" id="presentationExpert" name="presentationExpert">
+      </div>
+    </p>
+      </fieldset>
 
-<section id="formToSubmit">
-  <form id="tastingForm">
-    //change optional to required except for URL
-    <fieldset>
-      <legend>Expert Information</legend>
-    <p>
-    <label for="firstName">Expert First Name</label>
-    <input optional autofocus autocomplete="name" type="text" placeholder="your first name" id="firstName" name="firstName">
-    </p>
-    <p>
-    <label for="lastName">Expert Last Name</label>
-    <input optional type="text" autocomplete="family-name" placeholder="your last name" id="lastName" name="lastName">
-    </p>
-    <p>
-    <label for="urlExpert">Website/URL</label>
-    <input optional type="url" placeholder="URL linking to your website/profile/presentation" id="urlExpert" name="urlExpert">
-    </p>
-    <p>
-    <label for="presentationExpert">Short presentation (max 200 characters)</label>
-    <input optional type="text" maxlength="200" placeholder="Your presentation (max 200 characters)" id="presentationExpert" name="presentationExpert">
-    </p>
-    </fieldset>
+      <fieldset>
+        <legend>Main Rum Info</legend>
+      <div class="labelClass" for="alcoolType">rum Type</label>
+      <p>
+        <select id="alcoolType" name="alcoolType">
+                <option value="rum">rum</option>
+                <option value="ron">ron</option>
+                <option value="rhum">rhum</option>
+        </select>
+        </div>
+      </p>
+      <p>
+        <div class="labelClass" for="alcoolName">
+        <input class="inputClass" placeholder="Alcool Name" optional type="text" id="alcoolName" name="alcoolName">
+        </div>
+      </p>
+      <p>
+        <div class="labelClass" for="alcoolBrand">
+        <input class="inputClass" placeholder="Brand" optional type="text" id="alcoolBrand" name="alcoolBrand">
+        </div>
+      </p>
+      <p>
+        <div class="labelClass" for="alcoolDistillery">
+        <input class="inputClass" placeholder="Distillery" optional type="text" id="alcoolDistillery" name="alcoolDistillery">
+        </div>
+      </p>
+      <p>
+        <div class="labelClass" for="alcoolCountry">
+        <input class="inputClass" placeholder="Distillery Country" optional type="text" id="alcoolCountry" name="alcoolCountry">
+        </div>
+      </p>
+      <p>
+        <div class="labelClass" for="alcoolYear">
+        <input class="inputClass" placeholder="Year" optional type="number" min="1900" max="2020" pattern="[0-9]*" id="alcoolYear" name="alcoolYear">
+        </div>
+      </p>
+      </fieldset>
 
-    <fieldset>
-      <legend>Main Rum Info</legend>
-    <label for="alcoolType">rum Type</label>
+      <fieldset class="fieldsetClass">
+        <legend>Tasting</legend>
+      <!--<p>
+      <div>take a photo or upload an image</div>
+      <input class="inputClass" optional type="file" accept="image/*" capture="user" id="alcoolPhoto">
+    ``</div></p> -->
     <p>
-    <select id="alcoolType" name="alcoolType">
-            <option value="rum">rum</option>
-            <option value="ron">ron</option>
-            <option value="rhum">rhum</option>
-    </select>
+      <div class="labelClass" for="alcoolView">
+      <textarea class="textAreaClass" optional placeholder="The View" id="alcoolView" name="alcoolView"></textarea>
+      </div>
     </p>
-    <p>
-    <label for="alcoolName">Rum/Ron/Rhum Name</label>
-    <input optional type="text" id="alcoolName" name="alcoolName">
+      <p>
+      <div class="labelClass" for="alcoolSniff">
+      <textarea class="textAreaClass" optional placeholder="The Sniff" id="alcoolSniff" name="alcoolSniff"></textarea>
+      </div>
     </p>
-    <p>
-    <label for="alcoolBrand">Brand</label>
-    <input optional type="text" id="alcoolBrand" name="alcoolBrand">
+      <p>
+      <div class="labelClass" for="alcoolTasting">
+      <textarea class="textAreaClass" optional placeholder="The Tasting" id="alcoolTasting" name="alcoolTasting"></textarea>
+      </div>
     </p>
-    <p>
-    <label for="alcoolDistillery">Distillery</label>
-    <input optional type="text" id="alcoolDistillery" name="alcoolDistillery">
+      <p>
+      <div class="labelClass" for="alcoolInitialImpressions">
+      <textarea class="textAreaClass" optional placeholder="Initial Impressions" id="alcoolInitialImpressions" name="alcoolInitialImpressions"></textarea>
+      </div>
     </p>
-    <p>
-    <label for="alcoolCountry">Distillery Country</label>
-    <input optional type="text" id="alcoolCountry" name="alcoolCountry">
+      <p>
+      <div class="labelClass" for="alcoolBody">
+      <textarea class="textAreaClass" optional placeholder="The Body" id="alcoolBody" name="alcoolBody"></textarea>
+      </div>
     </p>
-    <p>
-    <label for="alcoolYear">Year</label>
-    <input optional type="number" min="1900" max="2020" pattern="[0-9]*" id="alcoolYear" name="alcoolYear">
+      <p>
+      <div class="labelClass" for="alcoolFade">
+      <textarea class="textAreaClass" optional placeholder="The Fade" id="alcoolFade" name="alcoolFade"></textarea>
+      </div>
     </p>
-    </fieldset>
+      <p>
+      <div class="labelClass" for="alcoolFurtherTasting">
+      <textarea class="textAreaClass" optional placeholder="Further Tasting" id="alcoolFurtherTasting" name="alcoolFurtherTasting"></textarea>
+      </div>
+    </p>
+      </fieldset>
 
-    <fieldset>
-      <legend>Tasting</legend>
-    <!--<p>
-    <div>take a photo or upload an image</div>
-    <input optional type="file" accept="image/*" capture="user" id="alcoolPhoto">
-  ``</p> -->
-    <p>
-    <label for="alcoolView">The View</label>
-    <textarea optional placeholder="The View" id="alcoolView" name="alcoolView"></textarea>
-    </p>
-    <p>
-    <label for="alcoolSniff">The Sniff</label>
-    <textarea optional placeholder="The Sniff" id="alcoolSniff" name="alcoolSniff"></textarea>
-    </p>
-    <p>
-    <label for="alcoolTasting">The Tasting</label>
-    <textarea optional placeholder="The Tasting" id="alcoolTasting" name="alcoolTasting"></textarea>
-    </p>
-    <p>
-    <label for="alcoolInitialImpressions">Initial Impressions</label>
-    <textarea optional placeholder="Initial Impressions" id="alcoolInitialImpressions" name="alcoolInitialImpressions"></textarea>
-    </p>
-    <p>
-    <label for="alcoolBody">The Body</label>
-    <textarea optional placeholder="The Body" id="alcoolBody" name="alcoolBody"></textarea>
-    </p>
-    <p>
-    <label for="alcoolFade">The Fade</label>
-    <textarea optional placeholder="The Fade" id="alcoolFade" name="alcoolFade"></textarea>
-    </p>
-    <p>
-    <label for="alcoolFurtherTasting">Further Tasting</label>
-    <textarea optional placeholder="Further Tasting" id="alcoolFurtherTasting" name="alcoolFurtherTasting"></textarea>
-    </p>
-    </fieldset>
+      <fieldset>
+        <legend>Summary</legend>
+          <p>
+            <div class="labelClass" for="alcoolAnecdote"><label>
+            <textarea class="textAreaClass" optional id="alcoolAnecdote" name="alcoolAnecdote" placeholder="Feel free to share an anecdote or your final thoughts about this tasting review"></textarea>
+            </div>
+          </p>
+          <p>
+            <div class="labelClass" for="alcoolFinalNote">
+            <input class="inputClass" placeholder="Final Note (from 0 to 10)" optional type="number" min="0" max="10" pattern="[0-9]*" id="alcoolFinalNote" name="alcoolFinalNote">
+            </div>
+          </p>
+      </fieldset>
+      <p class="btnSubmitClassContainer">
+        <input class="btnSubmitClass" type="submit" id="tastingFormSubmit" value="Submit">
+      </p>
+    </form>
+  </section>
 
-    <fieldset>
-      <legend>Summary</legend>
-    <p>
-    <label for="alcoolAnecdote">Anecdote</label>
-    <textarea optional id="alcoolAnecdote" name="alcoolAnecdote"></textarea>
-    </p>
-    <p>
-    <label for="alcoolFinalNote">Final Note (from 0 to 10)</label>
-    <input optional type="number" min="0" max="10" pattern="[0-9]*" id="alcoolFinalNote" name="alcoolFinalNote">
-    </p>
-    </fieldset>
-    <p>
-    <input type="submit" id="tastingFormSubmit" value="Submit">
-
-    </p>
-  </form>
-</section>
-
-<section id="formSubmitted">
-  <div id="popUpFormSubmitted">
-    <div id="thanksMessage">Thank you for your great review!</div>
-    <div id="nextStep">
-      <div id="nextStepText">Would you like to submit a new one?</div>
-      <div><a href="#" id="lnkLogMeOut">No thanks, log me out</a></div>
-      <div><a href="#" id="fulfillNewForm">Yes, for sure!</a></div>
+  <section id="formSubmitted">
+    <div class="popUpFormSubmitted">
+      <div class="thanksMessage">Thank you for your great review!</div>
+      <div class="nextStep">
+        <div class="nextStepText">Would you like to submit a new one?</div>
+        <div><a class="submitNewFormNo" href="#" id="lnkLogMeOut">No thanks, log me out</a></div>
+        <div><a class="submitNewFormYes" href="#" id="fulfillNewForm">Yes, for sure!</a></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 </html>
