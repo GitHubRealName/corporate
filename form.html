@@ -1,0 +1,150 @@
+<!doctype html>
+<title>Rumeo - corporate</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAEZkAUzWu7JsOvVCXP3WkBSnX5acMbtKg",
+    authDomain: "rumeo-7o7cc.firebaseapp.com",
+    databaseURL: "https://rumeo-7o7cc.firebaseio.com",
+    projectId: "rumeo-7o7cc",
+    storageBucket: "rumeo-7o7cc.appspot.com",
+    messagingSenderId: "114225470187"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="form.js" defer></script>
+
+<header>
+    <h1><section class="title_logo">rumeo</section></h1>
+</header>
+
+<section id="mainMenu">
+    <p>Welcome <span id="userName"></span>! Please fill out the form and press submit to send us your great rum review :)</p>
+    <p><a href="#" id="lnkLogOut">Log out</a></p>
+</section>
+
+<section id="formToSubmit">
+  <form id="tastingForm">
+    //change optional to required except for URL
+    <fieldset>
+      <legend>Expert Information</legend>
+    <p>
+    <label for="firstName">Expert First Name</label>
+    <input optional autofocus autocomplete="name" type="text" placeholder="your first name" id="firstName" name="firstName">
+    </p>
+    <p>
+    <label for="lastName">Expert Last Name</label>
+    <input optional type="text" autocomplete="family-name" placeholder="your last name" id="lastName" name="lastName">
+    </p>
+    <p>
+    <label for="urlExpert">Website/URL</label>
+    <input optional type="url" placeholder="URL linking to your website/profile/presentation" id="urlExpert" name="urlExpert">
+    </p>
+    <p>
+    <label for="presentationExpert">Short presentation (max 200 characters)</label>
+    <input optional type="text" maxlength="200" placeholder="Your presentation (max 200 characters)" id="presentationExpert" name="presentationExpert">
+    </p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Main Rum Info</legend>
+    <label for="alcoolType">rum Type</label>
+    <p>
+    <select id="alcoolType" name="alcoolType">
+            <option value="rum">rum</option>
+            <option value="ron">ron</option>
+            <option value="rhum">rhum</option>
+    </select>
+    </p>
+    <p>
+    <label for="alcoolName">Rum/Ron/Rhum Name</label>
+    <input optional type="text" id="alcoolName" name="alcoolName">
+    </p>
+    <p>
+    <label for="alcoolBrand">Brand</label>
+    <input optional type="text" id="alcoolBrand" name="alcoolBrand">
+    </p>
+    <p>
+    <label for="alcoolDistillery">Distillery</label>
+    <input optional type="text" id="alcoolDistillery" name="alcoolDistillery">
+    </p>
+    <p>
+    <label for="alcoolCountry">Distillery Country</label>
+    <input optional type="text" id="alcoolCountry" name="alcoolCountry">
+    </p>
+    <p>
+    <label for="alcoolYear">Year</label>
+    <input optional type="number" min="1900" max="2020" pattern="[0-9]*" id="alcoolYear" name="alcoolYear">
+    </p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Tasting</legend>
+    <!--<p>
+    <div>take a photo or upload an image</div>
+    <input optional type="file" accept="image/*" capture="user" id="alcoolPhoto">
+  ``</p> -->
+    <p>
+    <label for="alcoolView">The View</label>
+    <textarea optional placeholder="The View" id="alcoolView" name="alcoolView"></textarea>
+    </p>
+    <p>
+    <label for="alcoolSniff">The Sniff</label>
+    <textarea optional placeholder="The Sniff" id="alcoolSniff" name="alcoolSniff"></textarea>
+    </p>
+    <p>
+    <label for="alcoolTasting">The Tasting</label>
+    <textarea optional placeholder="The Tasting" id="alcoolTasting" name="alcoolTasting"></textarea>
+    </p>
+    <p>
+    <label for="alcoolInitialImpressions">Initial Impressions</label>
+    <textarea optional placeholder="Initial Impressions" id="alcoolInitialImpressions" name="alcoolInitialImpressions"></textarea>
+    </p>
+    <p>
+    <label for="alcoolBody">The Body</label>
+    <textarea optional placeholder="The Body" id="alcoolBody" name="alcoolBody"></textarea>
+    </p>
+    <p>
+    <label for="alcoolFade">The Fade</label>
+    <textarea optional placeholder="The Fade" id="alcoolFade" name="alcoolFade"></textarea>
+    </p>
+    <p>
+    <label for="alcoolFurtherTasting">Further Tasting</label>
+    <textarea optional placeholder="Further Tasting" id="alcoolFurtherTasting" name="alcoolFurtherTasting"></textarea>
+    </p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Summary</legend>
+    <p>
+    <label for="alcoolAnecdote">Anecdote</label>
+    <textarea optional id="alcoolAnecdote" name="alcoolAnecdote"></textarea>
+    </p>
+    <p>
+    <label for="alcoolFinalNote">Final Note (from 0 to 10)</label>
+    <input optional type="number" min="0" max="10" pattern="[0-9]*" id="alcoolFinalNote" name="alcoolFinalNote">
+    </p>
+    </fieldset>
+    <p>
+    <input type="submit" id="tastingFormSubmit" value="Submit">
+
+    </p>
+  </form>
+</section>
+
+<section id="formSubmitted">
+  <div id="popUpFormSubmitted">
+    <div id="thanksMessage">Thank you for your great review!</div>
+    <div id="nextStep">
+      <div id="nextStepText">Would you like to submit a new one?</div>
+      <div><a href="#" id="lnkLogMeOut">No thanks, log me out</a></div>
+      <div><a href="#" id="fulfillNewForm">Yes, for sure!</a></div>
+    </div>
+  </div>
+</section>
+</html>
